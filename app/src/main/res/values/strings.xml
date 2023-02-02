@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Survey Application</string>
+    <string name="odyssey_survey_form">Odyssey-2023</string>
+    <string name="greetings">Hope you had a great Odyssey!!!!</string>
+    <string name="feedback_string">We would love to hear feedback about your experience.</string>
+    <string name="name">Name</string>
+    <string name="role">Role</string>
+</resources>
