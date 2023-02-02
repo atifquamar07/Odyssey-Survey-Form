@@ -113,5 +113,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor,MissingConstraints" />
 
+    <EditText
+        android:id="@+id/roleinput"
+        android:layout_width="346dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="513dp"
+        android:layout_marginBottom="147dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/enter_your_role"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
