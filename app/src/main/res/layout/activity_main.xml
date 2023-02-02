@@ -4,77 +4,114 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="#000000"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_started_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="615dp"
         android:text="@string/odyssey_survey_form"
         android:textColor="#FDD235"
         android:textSize="30sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/greetings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="339dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="481dp"
         android:text="@string/greetings"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="166dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/feedback_listening"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="319dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginBottom="387dp"
         android:text="@string/feedback_string"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="213dp" />
+        tools:layout_editor_absoluteX="16dp" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="556dp"
+        android:contentDescription="@string/odyssey_logo"
         android:src="@drawable/odyssey_logo"
-        tools:layout_editor_absoluteX="274dp"
-        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/input_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="352dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="300dp"
         android:text="@string/name"
         android:textColor="#FBF6F6"
         android:textSize="22sp"
-        android:textStyle="bold|normal"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="326dp" />
+        tools:layout_editor_absoluteX="20dp" />
 
     <TextView
         android:id="@+id/input_role"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="347dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginBottom="104dp"
         android:text="@string/role"
         android:textColor="@color/white"
         android:textSize="22sp"
-        android:textStyle="bold|normal"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="462dp" />
+        tools:layout_editor_absoluteX="20dp" />
+
+    <EditText
+        android:id="@+id/name_input_box"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="208dp"
+        android:autofillHints="Enter your name"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/input_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="LabelFor,MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

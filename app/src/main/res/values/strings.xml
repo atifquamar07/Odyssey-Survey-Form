@@ -5,4 +5,6 @@
     <string name="feedback_string">We would love to hear feedback about your experience.</string>
     <string name="name">Name</string>
     <string name="role">Role</string>
+    <string name="input_name">Enter your name</string>
+    <string name="odyssey_logo">odyssey logo</string>
 </resources>
