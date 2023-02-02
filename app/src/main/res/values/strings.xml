@@ -8,4 +8,5 @@
     <string name="input_name">Enter your name</string>
     <string name="odyssey_logo">odyssey logo</string>
     <string name="enter_your_role">Enter your Role</string>
+    <string name="submit">SUBMIT</string>
 </resources>
