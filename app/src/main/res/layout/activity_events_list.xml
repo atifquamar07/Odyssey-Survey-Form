@@ -153,6 +153,7 @@
 
     <RatingBar
         android:id="@+id/ratingBarMusic"
+        android:visibility="gone"
         android:layout_width="242dp"
         android:layout_height="44dp"
         android:layout_marginStart="190dp"
@@ -172,6 +173,7 @@
 
     <RatingBar
         android:id="@+id/ratingBarDance"
+        android:visibility="gone"
         android:layout_width="242dp"
         android:layout_height="44dp"
         android:layout_marginStart="190dp"
@@ -192,6 +194,7 @@
 
     <RatingBar
         android:id="@+id/ratingBarPlay"
+        android:visibility="gone"
         android:layout_width="242dp"
         android:layout_height="44dp"
         android:layout_marginStart="190dp"
@@ -212,6 +215,7 @@
 
     <RatingBar
         android:id="@+id/ratingBarFashion"
+        android:visibility="gone"
         android:layout_width="242dp"
         android:layout_height="44dp"
         android:layout_marginStart="190dp"
@@ -232,6 +236,7 @@
 
     <RatingBar
         android:id="@+id/ratingBarFood"
+        android:visibility="gone"
         android:layout_width="242dp"
         android:layout_height="44dp"
         android:layout_marginStart="190dp"
