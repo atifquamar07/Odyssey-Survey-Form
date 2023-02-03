@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.RatingBar
+import android.widget.Toast
 
 class EventsList : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class EventsList : AppCompatActivity() {
     private lateinit var food: CheckBox
     private lateinit var submit: Button
     private lateinit var clear: Button
+    private lateinit var ratingMusic: RatingBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
