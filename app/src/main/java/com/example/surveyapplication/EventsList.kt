@@ -44,6 +44,5 @@ class EventsList : AppCompatActivity() {
                 food.isChecked = false
             }
         }
-
     }
 }
