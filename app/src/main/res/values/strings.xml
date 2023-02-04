@@ -16,4 +16,6 @@
     <string name="fashion">Fashion</string>
     <string name="food">Food</string>
     <string name="clear">CLEAR</string>
+    <string name="hello">Output here the responses</string>
+    <string name="thankyou">Thank You for your response.</string>
 </resources>

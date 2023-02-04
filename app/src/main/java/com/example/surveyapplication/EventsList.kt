@@ -25,8 +25,7 @@ class EventsList : AppCompatActivity() {
     private lateinit var ratingFashion: RatingBar
     private lateinit var ratingFood: RatingBar
 
-    // Hashmap to store ratings
-    private var ratingsMap : HashMap<String, Float> = HashMap<String, Float> ()
+    private val ratingsMap : HashMap<String, Float> = HashMap()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
