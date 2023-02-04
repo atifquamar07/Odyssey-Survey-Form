@@ -4,6 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="20dp"
     tools:context=".FinalPage">
+
+    <TextView
+        android:id="@+id/tv_started_title"
+        android:layout_width="212dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="615dp"
+        android:text="@string/odyssey_survey_form"
+        android:textColor="#FDD235"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="556dp"
+        android:contentDescription="@string/odyssey_logo"
+        android:src="@drawable/odyssey_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

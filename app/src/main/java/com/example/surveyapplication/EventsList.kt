@@ -11,6 +11,7 @@ import android.widget.Toast
 
 class EventsList : AppCompatActivity() {
 
+    // Declaring variables
     private lateinit var music: CheckBox
     private lateinit var dance: CheckBox
     private lateinit var play: CheckBox
@@ -24,10 +25,14 @@ class EventsList : AppCompatActivity() {
     private lateinit var ratingFashion: RatingBar
     private lateinit var ratingFood: RatingBar
 
+    // Hashmap to store ratings
+    private var ratingsMap : HashMap<String, Float> = HashMap<String, Float> ()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_events_list)
 
+        // Initializing variables
         music = findViewById(R.id.music)
         dance = findViewById(R.id.dance)
         play = findViewById(R.id.play)
@@ -41,6 +46,36 @@ class EventsList : AppCompatActivity() {
         ratingFashion = findViewById(R.id.ratingBarFashion)
         ratingFood = findViewById(R.id.ratingBarFood)
 
+        // Ratings initialized to -1
+        ratingsMap["Music"] = -1.0f
+        ratingsMap["Dance"] = -1.0f
+        ratingsMap["Play"] = -1.0f
+        ratingsMap["Fashion"] = -1.0f
+        ratingsMap["Food"] = -1.0f
+
+        // Storing ratings in hashmap
+        ratingMusic.setOnRatingBarChangeListener { _, rating, _ ->
+            ratingsMap["Music"] = rating
+            Toast.makeText(applicationContext, "Rating for Music given: $rating star", Toast.LENGTH_SHORT).show()
+        }
+        ratingDance.setOnRatingBarChangeListener { _, rating, _ ->
+            ratingsMap["Dance"] = rating
+            Toast.makeText(applicationContext, "Rating for Dance given: $rating star", Toast.LENGTH_SHORT).show()
+        }
+        ratingPlay.setOnRatingBarChangeListener { _, rating, _ ->
+            ratingsMap["Play"] = rating
+            Toast.makeText(applicationContext, "Rating for Play given: $rating star", Toast.LENGTH_SHORT).show()
+        }
+        ratingFashion.setOnRatingBarChangeListener { _, rating, _ ->
+            ratingsMap["Fashion"] = rating
+            Toast.makeText(applicationContext, "Rating for Fashion given: $rating star", Toast.LENGTH_SHORT).show()
+        }
+        ratingFood.setOnRatingBarChangeListener { _, rating, _ ->
+            ratingsMap["Food"] = rating
+            Toast.makeText(applicationContext, "Rating for Food given: $rating star", Toast.LENGTH_SHORT).show()
+        }
+
+        // changing visibility of rating bar
         music.setOnClickListener{
             if(music.isChecked){
                 ratingMusic.visibility = View.VISIBLE
@@ -82,6 +117,7 @@ class EventsList : AppCompatActivity() {
             }
         }
 
+        // CLEAR button functionality
         clear.setOnClickListener{
             if(music.isChecked){
                 music.isChecked = false
@@ -103,8 +139,10 @@ class EventsList : AppCompatActivity() {
                 food.isChecked = false
                 ratingFood.visibility = View.GONE
             }
+            Toast.makeText(applicationContext, "Response cleared!", Toast.LENGTH_SHORT).show()
         }
 
+        // SUBMIT button functionality
         submit.setOnClickListener(){
             val intent = Intent(this, FinalPage::class.java)
             Toast.makeText(applicationContext, "Response submitted!", Toast.LENGTH_SHORT).show()
