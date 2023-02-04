@@ -1,5 +1,6 @@
 package com.example.surveyapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -22,7 +23,6 @@ class EventsList : AppCompatActivity() {
     private lateinit var ratingPlay: RatingBar
     private lateinit var ratingFashion: RatingBar
     private lateinit var ratingFood: RatingBar
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,5 +104,12 @@ class EventsList : AppCompatActivity() {
                 ratingFood.visibility = View.GONE
             }
         }
+
+        submit.setOnClickListener(){
+            val intent = Intent(this, FinalPage::class.java)
+            Toast.makeText(applicationContext, "Response submitted!", Toast.LENGTH_SHORT).show()
+            startActivity(intent)
+        }
+
     }
 }

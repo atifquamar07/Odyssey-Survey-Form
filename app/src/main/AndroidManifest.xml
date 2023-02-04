@@ -12,6 +12,9 @@
         android:theme="@style/Theme.SurveyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".FinalPage"
+            android:exported="false" />
+        <activity
             android:name=".EventsList"
             android:exported="false" />
         <activity
