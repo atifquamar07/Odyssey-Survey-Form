@@ -43,6 +43,10 @@ class MainActivity : AppCompatActivity() {
 
         eventPage.setOnClickListener(){
 
+            if(name == "" && role == ""){
+                Toast.makeText(applicationContext, "Name and Role field cannot be blank!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
             if(name == ""){
                 Toast.makeText(applicationContext, "Name field cannot be blank!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
