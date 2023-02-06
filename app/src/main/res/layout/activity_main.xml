@@ -1,106 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_started_title"
-        android:layout_width="212dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="615dp"
         android:text="@string/odyssey_survey_form"
         android:textColor="#FDD235"
         android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/greetings"
-        android:layout_width="339dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginBottom="481dp"
-        android:text="@string/greetings"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/feedback_listening"
-        android:layout_width="319dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="190dp"
-        android:layout_marginBottom="387dp"
-        android:text="@string/feedback_string"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="240dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="-50dp"
         android:layout_marginBottom="556dp"
         android:contentDescription="@string/odyssey_logo"
         android:src="@drawable/odyssey_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/greetings"
+        android:layout_marginTop="-500dp"
+        android:layout_width="339dp"
+        android:layout_height="45dp"
+        android:text="@string/greetings"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+    <TextView
+        android:id="@+id/feedback_listening"
+        android:layout_width="319dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="387dp"
+        android:text="@string/feedback_string"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="normal" />
 
     <TextView
         android:id="@+id/input_name"
         android:layout_width="352dp"
         android:layout_height="43dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="-360dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="300dp"
         android:text="@string/name"
         android:textColor="#FBF6F6"
         android:textSize="22sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/role"
-        android:layout_width="347dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="104dp"
-        android:text="@string/role"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
@@ -108,7 +70,7 @@
         android:layout_width="325dp"
         android:layout_height="50dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="-280dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="208dp"
         android:autofillHints="Enter your name"
@@ -116,18 +78,28 @@
         android:hint="@string/input_name"
         android:inputType="textPersonName"
         android:textColor="#83C8B8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/role"
+        android:layout_width="347dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-180dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="104dp"
+        android:text="@string/role"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="normal"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/roleinput"
         android:layout_width="324dp"
         android:layout_height="50dp"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="-90dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="147dp"
         android:autofillHints="@string/enter_your_role"
@@ -135,23 +107,16 @@
         android:hint="@string/enter_your_role"
         android:inputType="textPersonName"
         android:textColor="#83C8B8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="LabelFor,MissingConstraints" />
 
     <Button
         android:id="@+id/buttonForEventPage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="610dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="-120dp"
         android:layout_marginBottom="44dp"
-        android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/submit" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

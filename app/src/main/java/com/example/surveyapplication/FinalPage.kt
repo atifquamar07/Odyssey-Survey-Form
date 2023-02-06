@@ -1,5 +1,6 @@
 package com.example.surveyapplication
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -9,7 +10,6 @@ import android.widget.Toast
 
 class FinalPage : AppCompatActivity() {
 
-    private lateinit var check: Button
     private val output : ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,11 +53,6 @@ class FinalPage : AppCompatActivity() {
         }
 
         val arrayAdapter: ArrayAdapter<*>
-
-        val users = arrayOf(
-            "Virat Kohli", "Rohit Sharma", "Steve Smith",
-            "Kane Williamson", "Ross Taylor"
-        )
 
         // access the listView from xml file
         val mListView = findViewById<ListView>(R.id.list)

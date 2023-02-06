@@ -11,19 +11,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SurveyApplication"
         tools:targetApi="31">
+
         <activity
             android:name=".FinalPage"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".EventsList"
+            android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:configChanges="orientation|screenSize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
