@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
@@ -29,8 +30,45 @@ class EventsList : AppCompatActivity() {
     private val ratingsList : ArrayList<Int> = ArrayList()
     private val isEventAttended : ArrayList<Int> = ArrayList()
 
+    override fun onStart() {
+        super.onStart()
+        Log.i("EventsList-Activity","Activity started!")
+        Toast.makeText(applicationContext, "EventsListActivity started!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.i("EventsList-Activity","Activity Resumed!")
+        Toast.makeText(applicationContext, "EventsListActivity Resumed!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("EventsList-Activity","Activity Paused!")
+        Toast.makeText(applicationContext, "EventsListActivity Paused!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("EventsList-Activity","Activity Stopped!")
+        Toast.makeText(applicationContext, "EventsListActivity Stopped!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("EventsList-Activity","Activity Restarted!")
+        Toast.makeText(applicationContext, "EventsListActivity Restarted!", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("EventsList-Activity","Activity Destroyed!")
+        Toast.makeText(applicationContext, "EventsListActivity Destroyed!", Toast.LENGTH_SHORT).show()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("EventsList-Activity","Activity Created!")
+        Toast.makeText(applicationContext, "EventsListActivity Created!", Toast.LENGTH_SHORT).show()
+
         setContentView(R.layout.activity_events_list)
 
         // Initializing variables

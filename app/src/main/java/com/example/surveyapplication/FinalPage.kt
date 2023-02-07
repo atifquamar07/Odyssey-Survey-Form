@@ -2,15 +2,49 @@ package com.example.surveyapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 
 class FinalPage : AppCompatActivity() {
 
     private val output : ArrayList<String> = ArrayList()
+    override fun onStart() {
+        super.onStart()
+        Log.i("FinalPage-Activity","Activity started!")
+        Toast.makeText(applicationContext, "FinalPageActivity started!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onResume() {
+        super.onResume()
+        Log.i("FinalPage-Activity","Activity Resumed!")
+        Toast.makeText(applicationContext, "FinalPageActivity Resumed!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("FinalPage-Activity","Activity Paused!")
+        Toast.makeText(applicationContext, "FinalPageActivity Paused!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onStop() {
+        super.onStop()
+        Log.i("FinalPage-Activity","Activity Stopped!")
+        Toast.makeText(applicationContext, "FinalPageActivity Stopped!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("FinalPage-Activity","Activity Restarted!")
+        Toast.makeText(applicationContext, "FinalPageActivity Restarted!", Toast.LENGTH_SHORT).show()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("FinalPage-Activity","Activity Destroyed!")
+        Toast.makeText(applicationContext, "FinalPageActivity Destroyed!", Toast.LENGTH_SHORT).show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("FinalPage-Activity","Activity Created!")
+        Toast.makeText(applicationContext, "FinalPageActivity Created!", Toast.LENGTH_SHORT).show()
         setContentView(R.layout.activity_final_page)
 
         val ratingsList = intent.getIntegerArrayListExtra("ratingsList")
@@ -73,8 +107,7 @@ class FinalPage : AppCompatActivity() {
 
         // access the listView from xml file
         val mListView = findViewById<ListView>(R.id.list)
-        arrayAdapter = ArrayAdapter(this,
-            android.R.layout.simple_list_item_1, output)
+        arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, output)
         mListView.adapter = arrayAdapter
 
     }
