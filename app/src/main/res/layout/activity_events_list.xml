@@ -1,259 +1,237 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
+    android:orientation="vertical"
     android:padding="20dp"
     tools:context=".EventsList">
 
-    <TextView
-        android:id="@+id/tv_started_title"
-        android:layout_width="212dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="615dp"
-        android:text="@string/odyssey_survey_form"
-        android:textColor="#FDD235"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="556dp"
-        android:contentDescription="@string/odyssey_logo"
-        android:src="@drawable/odyssey_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/tv_started_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/odyssey_survey_form"
+            android:textColor="#FDD235"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="30dp"
+            android:layout_marginStart="350dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/odyssey_logo"
+            android:src="@drawable/odyssey_logo"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/askingEventsAttended"
-        android:layout_width="339dp"
+        android:layout_width="295dp"
         android:layout_height="45dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="481dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/what_all_events_did_you_attend_in_odyssey_23"
         android:textColor="@color/white"
         android:textSize="19sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp" />
+        android:textStyle="normal" />
 
-    <CheckBox
-        android:id="@+id/music"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginBottom="428dp"
-        android:text="@string/music"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/dance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginBottom="306dp"
-        android:text="@string/dance"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <CheckBox
+            android:id="@+id/music"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/music"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
-    <CheckBox
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="239dp"
-        android:text="@string/play"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RatingBar
+            android:id="@+id/ratingBarMusic"
+            android:layout_width="235dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:numStars="5"
+            android:outlineProvider="@color/white"
+            android:progressBackgroundTint="#756666"
+            android:rating="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:visibility="gone"
+            android:stepSize="1" />
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/fashion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="270dp"
-        android:layout_marginBottom="150dp"
-        android:text="@string/fashion"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
 
-    <CheckBox
-        android:id="@+id/food"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/food"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <CheckBox
+            android:id="@+id/dance"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:text="@string/dance"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="230dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginBottom="65dp"
-        android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RatingBar
+            android:id="@+id/ratingBarDance"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
+            android:layout_margin="0dp"
+            android:numStars="5"
+            android:outlineProvider="@color/white"
+            android:progressBackgroundTint="#756666"
+            android:rating="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:visibility="gone"
+            android:stepSize="1" />
 
-    <Button
-        android:id="@+id/clearButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginBottom="65dp"
-        android:text="@string/clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
 
-    <RatingBar
-        android:id="@+id/ratingBarMusic"
-        android:visibility="gone"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="215dp"
-        android:layout_marginBottom="424dp"
-        android:progressBackgroundTint="#756666"
-        android:outlineProvider="@color/white"
-        android:numStars="5"
-        android:rating="0"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
 
-    <RatingBar
-        android:id="@+id/ratingBarDance"
-        android:visibility="gone"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginBottom="240dp"
-        android:progressBackgroundTint="#756666"
-        android:outlineProvider="@color/white"
-        android:numStars="5"
-        android:rating="0"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <CheckBox
+            android:id="@+id/play"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:text="@string/play"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
-    <RatingBar
-        android:id="@+id/ratingBarPlay"
-        android:visibility="gone"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="150dp"
-        android:progressBackgroundTint="#756666"
-        android:outlineProvider="@color/white"
-        android:numStars="5"
-        android:rating="0"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <RatingBar
+            android:id="@+id/ratingBarPlay"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
+            android:layout_margin="0dp"
+            android:numStars="5"
+            android:outlineProvider="@color/white"
+            android:progressBackgroundTint="#756666"
+            android:rating="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:visibility="gone"
+            android:stepSize="1" />
 
-    <RatingBar
-        android:id="@+id/ratingBarFashion"
-        android:visibility="gone"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="223dp"
-        android:layout_marginBottom="100dp"
-        android:progressBackgroundTint="#756666"
-        android:outlineProvider="@color/white"
-        android:numStars="5"
-        android:rating="0"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
-    <RatingBar
-        android:id="@+id/ratingBarFood"
-        android:visibility="gone"
-        android:layout_width="242dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginBottom="50dp"
-        android:progressBackgroundTint="#756666"
-        android:outlineProvider="@color/white"
-        android:numStars="5"
-        android:rating="0"
-        android:scaleX="0.6"
-        android:scaleY="0.6"
-        android:stepSize="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/fashion"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:text="@string/fashion"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <RatingBar
+            android:id="@+id/ratingBarFashion"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
+            android:layout_margin="0dp"
+            android:numStars="5"
+            android:outlineProvider="@color/white"
+            android:progressBackgroundTint="#756666"
+            android:rating="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:visibility="gone"
+            android:stepSize="1" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/food"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:text="@string/food"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="normal" />
+
+        <RatingBar
+            android:id="@+id/ratingBarFood"
+            android:layout_width="242dp"
+            android:layout_height="44dp"
+            android:layout_margin="0dp"
+            android:numStars="5"
+            android:outlineProvider="@color/white"
+            android:progressBackgroundTint="#756666"
+            android:rating="0"
+            android:scaleX="0.6"
+            android:scaleY="0.6"
+            android:visibility="gone"
+            android:stepSize="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="346dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_margin="0dp"
+            android:layout_marginStart="0dp"
+            android:text="@string/clear" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="128dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:text="@string/submit" />
+
+    </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
