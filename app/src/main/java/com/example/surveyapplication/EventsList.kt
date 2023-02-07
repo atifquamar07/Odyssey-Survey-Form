@@ -49,7 +49,7 @@ class EventsList : AppCompatActivity() {
 
         // Ratings initialized to -1
         for(i in 1..5){
-            ratingsList.add(-1)
+            ratingsList.add(0)
         }
 
         // Boolean for rating provided initialized to 0
@@ -61,52 +61,45 @@ class EventsList : AppCompatActivity() {
         ratingMusic.setOnRatingBarChangeListener { _, rating, _ ->
             ratingsList[0] = rating.toInt()
             isEventAttended[0] = 1
-            Toast.makeText(applicationContext, "Rating for Music given: $rating star", Toast.LENGTH_SHORT).show()
         }
         ratingDance.setOnRatingBarChangeListener { _, rating, _ ->
             ratingsList[1] = rating.toInt()
             isEventAttended[1] = 1
-            Toast.makeText(applicationContext, "Rating for Dance given: $rating star", Toast.LENGTH_SHORT).show()
         }
         ratingPlay.setOnRatingBarChangeListener { _, rating, _ ->
             ratingsList[2] = rating.toInt()
             isEventAttended[2] = 1
-            Toast.makeText(applicationContext, "Rating for Play given: $rating star", Toast.LENGTH_SHORT).show()
         }
         ratingFashion.setOnRatingBarChangeListener { _, rating, _ ->
             ratingsList[3] = rating.toInt()
             isEventAttended[3] = 1
-            Toast.makeText(applicationContext, "Rating for Fashion given: $rating star", Toast.LENGTH_SHORT).show()
         }
         ratingFood.setOnRatingBarChangeListener { _, rating, _ ->
             ratingsList[4] = rating.toInt()
             isEventAttended[4] = 1
-            Toast.makeText(applicationContext, "Rating for Food given: $rating star", Toast.LENGTH_SHORT).show()
         }
 
         // changing visibility of rating bar
         music.setOnClickListener{
             if(music.isChecked){
                 ratingMusic.visibility = View.VISIBLE
-                if(ratingsList[0] != -1){
-                    isEventAttended[0] = 1
-                }
+                isEventAttended[0] = 1
             }
             else {
                 ratingMusic.visibility = View.GONE
                 ratingMusic.rating = 0.0f
+                ratingsList[0] = 0
                 isEventAttended[0] = 0
             }
         }
         dance.setOnClickListener{
             if(dance.isChecked){
                 ratingDance.visibility = View.VISIBLE
-                if(ratingsList[1] != -1){
-                    isEventAttended[1] = 1
-                }
+                isEventAttended[1] = 1
             }
             else{
                 ratingDance.visibility = View.GONE
+                ratingsList[1] = 0
                 ratingDance.rating = 0.0f
                 isEventAttended[1] = 0
             }
@@ -114,12 +107,11 @@ class EventsList : AppCompatActivity() {
         play.setOnClickListener{
             if(play.isChecked){
                 ratingPlay.visibility = View.VISIBLE
-                if(ratingsList[2] != -1){
-                    isEventAttended[2] = 1
-                }
+                isEventAttended[2] = 1
             }
-            else{
+            else {
                 ratingPlay.visibility = View.GONE
+                ratingsList[2] = 0
                 ratingPlay.rating = 0.0f
                 isEventAttended[2] = 0
             }
@@ -127,12 +119,11 @@ class EventsList : AppCompatActivity() {
         fashion.setOnClickListener{
             if(fashion.isChecked){
                 ratingFashion.visibility = View.VISIBLE
-                if(ratingsList[3] != -1){
-                    isEventAttended[3] = 1
-                }
+                isEventAttended[3] = 1
             }
             else{
                 ratingFashion.visibility = View.GONE
+                ratingsList[3] = 0
                 ratingFashion.rating = 0.0f
                 isEventAttended[3] = 0
             }
@@ -140,12 +131,11 @@ class EventsList : AppCompatActivity() {
         food.setOnClickListener{
             if(food.isChecked){
                 ratingFood.visibility = View.VISIBLE
-                if(ratingsList[4] != -1){
-                    isEventAttended[4] = 1
-                }
+                isEventAttended[4] = 1
             }
             else{
                 ratingFood.visibility = View.GONE
+                ratingsList[4] = 0
                 ratingFood.rating = 0.0f
                 isEventAttended[4] = 0
             }
@@ -155,40 +145,55 @@ class EventsList : AppCompatActivity() {
         clear.setOnClickListener{
             if(music.isChecked){
                 music.isChecked = false
-                isEventAttended[0] = 0
-                ratingMusic.rating = 0.0f
                 ratingMusic.visibility = View.GONE
             }
+            isEventAttended[0] = 0
+            ratingMusic.rating = 0.0f
+            ratingsList[0] = 0
+
             if(dance.isChecked){
                 dance.isChecked = false
-                isEventAttended[1] = 0
-                ratingDance.rating = 0.0f
                 ratingDance.visibility = View.GONE
             }
+            ratingDance.rating = 0.0f
+            ratingsList[1] = 0
+            isEventAttended[1] = 0
+
             if(play.isChecked){
                 play.isChecked = false
-                isEventAttended[2] = 0
-                ratingPlay.rating = 0.0f
                 ratingPlay.visibility = View.GONE
             }
+            ratingPlay.rating = 0.0f
+            ratingsList[2] = 0
+            isEventAttended[2] = 0
+
             if(fashion.isChecked){
                 fashion.isChecked = false
-                isEventAttended[3] = 0
-                ratingFashion.rating = 0.0f
                 ratingFashion.visibility = View.GONE
             }
+            ratingFashion.rating = 0.0f
+            ratingsList[3] = 0
+            isEventAttended[3] = 0
+
             if(food.isChecked){
                 food.isChecked = false
-                isEventAttended[4] = 0
-                ratingFood.rating = 0.0f
                 ratingFood.visibility = View.GONE
             }
+            ratingFood.rating = 0.0f
+            ratingsList[4] = 0
+            isEventAttended[4] = 0
+
             Toast.makeText(applicationContext, "Response cleared!", Toast.LENGTH_SHORT).show()
         }
 
         // SUBMIT button functionality
         submit.setOnClickListener(){
             val bundle = Bundle()
+            ratingsList[0] = ratingMusic.rating.toInt()
+            ratingsList[1] = ratingDance.rating.toInt()
+            ratingsList[2] = ratingPlay.rating.toInt()
+            ratingsList[3] = ratingFashion.rating.toInt()
+            ratingsList[4] = ratingFood.rating.toInt()
             Toast.makeText(applicationContext, "Response submitted!", Toast.LENGTH_SHORT).show()
             bundle.putIntegerArrayList("ratingsList", ratingsList)
             bundle.putIntegerArrayList("isRatingProvided", isEventAttended)

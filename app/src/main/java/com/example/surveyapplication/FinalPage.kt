@@ -1,12 +1,9 @@
 package com.example.surveyapplication
 
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ListView
-import android.widget.Toast
 
 class FinalPage : AppCompatActivity() {
 
@@ -17,39 +14,59 @@ class FinalPage : AppCompatActivity() {
         setContentView(R.layout.activity_final_page)
 
         val ratingsList = intent.getIntegerArrayListExtra("ratingsList")
-        val isRatingProvided = intent.getIntegerArrayListExtra("isRatingProvided")
+        val isEventAttended = intent.getIntegerArrayListExtra("isRatingProvided")
 
-        if (isRatingProvided != null) {
-            if(isRatingProvided[0] == 1){
-                output.add("Rating for Music category: ${ratingsList?.get(0)} stars")
+        if (isEventAttended != null && ratingsList != null) {
+            if(isEventAttended[0] == 1 && ratingsList[0] != 0){
+                output.add("Music: Event attended and rated with ${ratingsList[0]} stars")
+            }
+            else if(isEventAttended[0] == 1 && ratingsList[0] == 0) {
+                output.add("Music: Event attended and rated not provided")
             }
             else {
-                output.add("Rating for Music category: Not Provided")
+                output.add("Music: Event not attended")
             }
-            if(isRatingProvided[1] == 1){
-                output.add("Rating for Dance category: ${ratingsList?.get(1)} stars")
+
+            if(isEventAttended[1] == 1 && ratingsList[1] != 0){
+                output.add("Dance: Event attended and rated with ${ratingsList[1]} stars")
             }
-            else {
-                output.add("Rating for Dance category: Not Provided")
-            }
-            if(isRatingProvided[2] == 1){
-                output.add("Rating for Play category: ${ratingsList?.get(2)} stars")
+            else if(isEventAttended[1] == 1 && ratingsList[1] == 0) {
+                output.add("Dance: Event attended and rating not provided")
             }
             else {
-                output.add("Rating for Play category: Not Provided")
+                output.add("Dance: Event not attended")
             }
-            if(isRatingProvided[3] == 1){
-                output.add("Rating for Fashion category: ${ratingsList?.get(3)} stars")
+
+            if(isEventAttended[2] == 1 && ratingsList[2] != 0){
+                output.add("Play: Event attended and rated with ${ratingsList[2]} stars")
             }
-            else {
-                output.add("Rating for Play category: Not Provided")
-            }
-            if(isRatingProvided[4] == 1){
-                output.add("Rating for Food category: ${ratingsList?.get(4)} stars")
+            else if(isEventAttended[2] == 1 && ratingsList[2] == 0) {
+                output.add("Play: Event attended and rating not provided")
             }
             else {
-                output.add("Rating for Food category: Not Provided")
+                output.add("Play: Event not attended")
             }
+
+            if(isEventAttended[3] == 1 && ratingsList[3] != 0){
+                output.add("Fashion: Event attended and rated with ${ratingsList[3]} stars")
+            }
+            else if(isEventAttended[3] == 1 && ratingsList[3] == 0) {
+                output.add("Fashion: Event attended and rating not provided")
+            }
+            else {
+                output.add("Fashion: Event not attended")
+            }
+
+            if(isEventAttended[4] == 1 && ratingsList[4] != 0){
+                output.add("Food: Event attended and rated with ${ratingsList[4]} stars")
+            }
+            else if(isEventAttended[0] == 1 && ratingsList[0] == 0) {
+                output.add("Food: Event attended and rating not provided")
+            }
+            else {
+                output.add("Food: Event not attended")
+            }
+
         }
 
         val arrayAdapter: ArrayAdapter<*>
