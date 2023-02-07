@@ -1,7 +1,6 @@
 package com.example.surveyapplication
 
 import android.content.Intent
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -94,6 +93,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Role field cannot be blank!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            Toast.makeText(applicationContext, "Name and Role recorded!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, EventsList::class.java)
             startActivity(intent)
         }
